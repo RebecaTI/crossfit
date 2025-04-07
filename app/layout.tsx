@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Heebo } from "next/font/google";
+import { Geist, Geist_Mono, Heebo, Yantramanav } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 
@@ -11,6 +11,12 @@ const geistSans = Geist({
 const heebo = Heebo({
   variable: "--font-heebo",
   subsets: ["latin"],
+});
+
+const yantramanav = Yantramanav({
+  variable: "--font-yantramanav",
+  subsets: ["latin"],
+  weight: ["700"],
 });
 
 const geistMono = Geist_Mono({
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${heebo.variable} container`}
+        className={`${geistSans.variable} ${geistMono.variable} ${heebo.variable} ${yantramanav.variable} container`}
       >
         <Header />
         {children}
