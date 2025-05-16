@@ -1,34 +1,31 @@
 export const healthGoalImages = [
   {
-    image: "/images/goal-1.png",
+    image: "/images/goal1.svg",
     alt: "Max Pump"
   },
   {
-    image: "/images/goal-2.png",
+    image: "/images/goal2.svg",
     alt: "Aron gyn"
   },
   {
-    image: "/images/goal-3.png",
+    image: "/images/goal3.svg",
     alt: "Fit & tone"
   },
   {
-    image: "/images/goal-4.png",
+    image: "/images/goal4.svg",
     alt: "Forza"
   },
   {
-    image: "/images/goal-5.png",
+    image: "/images/goal5.svg",
     alt: "Balance fitness"
   },
   {
-    image: "/images/goal-6.png",
+    image: "/images/goal6.svg",
     alt: "Health Goal 6"
   },
-  {
-    image: "/images/arrow.png",
-    alt: "Arrow"
-  },
-  {
-    image: "/images/goal-8.png",
-    alt: "Health Goal 8"
-  },
+  // {
+  //   image: "/images/arrow.png",
+  //   alt: "Arrow"
+  // },
 ]
+
