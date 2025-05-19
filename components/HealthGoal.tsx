@@ -6,8 +6,7 @@ import Marquee from "react-fast-marquee";
 export const HealthGoal = () => {
 
   return (
-    <section className="flex bg-black py-16">
-
+    <section className="flex bg-black pt-14 relative z-20">
 
       <Marquee className='w-full h-full'>
         <div className='flex flex-row' style={{ gap: 'calc(100vh / 6)' }}>
