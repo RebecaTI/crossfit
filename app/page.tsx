@@ -6,12 +6,12 @@ import { HealthGoal } from "@/components/HealthGoal";
 
 export default function Home() {
   return (
-    <div className=" min-h-screen min-w-screen background-page">
+    <div className="  background-page">
       <Hero />
       <PowerQuote />
-      <HealthGoal />
+      {/*<HealthGoal />
       <JoinUs />
-      <FindUs />
+      <FindUs /> */}
     </div>
   );
 }

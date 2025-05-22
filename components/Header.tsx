@@ -4,6 +4,8 @@ import React from 'react'
 
 const Header = () => {
   return (
+    // TODO:OPT Verification | passkeyModal
+
     <header className=" mx-auto flex items-center justify-between p-4 text-white fixed top-0 left-0 right-0 background-page z-10 h-20 bg-[#131619">
       <Image
         className="cursor-pointer"
