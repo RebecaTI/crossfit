@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
       </div>
       {/* text-[15rem] */}
-      <h1 className="text-[4rem] sm:text-[8rem] lg:text-[12rem] font-heebo font-bold text-center relative  pt-3">CROSSFIT</h1>
+      <h1 className="text-[3rem] sm:text-[8rem] lg:text-[12rem] font-heebo font-bold text-center relative  pt-3">CROSSFIT</h1>
 
       {/* <Button /> */}
 
