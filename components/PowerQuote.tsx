@@ -103,9 +103,7 @@ const PowerQuote = () => {
               className="object-contain"
             />
           </div>
-
         </div>
-
       </div>
     </section>
   )

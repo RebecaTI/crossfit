@@ -9,9 +9,9 @@ export default function Home() {
     <div className="  background-page">
       <Hero />
       <PowerQuote />
-      {/*<HealthGoal />
+      <HealthGoal />
       <JoinUs />
-      <FindUs /> */}
+      {/*<FindUs /> */}
     </div>
   );
 }

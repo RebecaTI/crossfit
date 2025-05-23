@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React from 'react'
 import ClientsForm from './constants/forms/clientsForm'
 
-
 const JoinUs = () => {
   return (
     <section className="bg-[#131619]">
