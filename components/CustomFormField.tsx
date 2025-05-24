@@ -16,16 +16,43 @@ import { FormFieldType } from "./constants/forms/clientsForm"
 interface CustomProps {
   control: Control<any>,
   fieldType: FormFieldType,
+  name: string,
+  labem?: string,
+  placeholder?: string,
+  iconSrc?: string,
+  iconAlt?: string,
+  disabled?: boolean,
+  dateFormat?: string,
+  showTimeSelect?: boolean,
+  children?: React.ReactNode,
+  renderSkeleton?: (field: any) => React.ReactNode,
 }
 
-function CustomFormField({ control, fieldType, name }: CustomProps) {
+const RenderRenderField = ({ field, props }: { field: any; props: CustomProps }) => {
+  return (
+    <Input
+      type="text"
+      placeholder="John Doe"
+    />
+  )
+}
+
+const CustomFormField = (props: CustomProps) => {
+  const { control, fieldType, name, label } = props;
+
   return (
     <FormField
       control={control}
       name={name}
       render={({ field }) => (
         <FormItem className="flex-1">
-          {fieldType !== FormFieldType.CHECKBOX && label}
+          {fieldType !== FormFieldType.CHECKBOX && label && (
+            <FormLabel> {label} </FormLabel >
+          )}
+          <RenderField field={field} props={props} />
+
+          <FormMessage className="shad-error" />
+
         </FormItem>
       )}
     />
