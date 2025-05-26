@@ -1,11 +1,25 @@
-import React from 'react'
+// "use client"
 
-const clientsForm = () => {
-  return (
-    <div>
+// import * as z from "zod"
+// import { useForm } from "react-hook-form"
+// import { zodResolver } from "@hookform/resolvers/zod"
 
-    </div>
-  )
-}
+// const formSchema = z.object({
+//   emailAddress: z.string().email(),
+// })
 
-export default clientsForm
+// const clientsForm = () => {
+//   const form = useForm<z.infer<typeof formSchema>>({
+//     resolver: zedResolver(formSchema),
+//     defaultValues: {
+
+//     }
+//   })
+//   return (
+//     <div>
+
+//     </div>
+//   )
+// }
+
+// export default clientsForm

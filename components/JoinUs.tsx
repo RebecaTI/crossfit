@@ -4,7 +4,7 @@ import ClientsForm from './constants/forms/clientsForm'
 
 const JoinUs = () => {
   return (
-    <section className="bg-[#131619]">
+    <section className="bg-[#131619] pb-30">
       <div className=" bg-[url('/background-join-us.svg')] bg-no-repeat bg-cover bg-center h-[300px] sm:h-[500px] flex justify-center items-center ">
         <div className="relative h-[200px] w-[200px] sm:h-[350px] sm:w-[350px]">
 
@@ -34,7 +34,7 @@ const JoinUs = () => {
         </div>
       </div>
 
-      <ClientsForm />
+      {/* <ClientsForm /> */}
     </section>
   )
 }
