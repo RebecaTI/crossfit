@@ -9,8 +9,6 @@ const Hero = () => {
           <Image
             src="/arrow.svg"
             alt="events arrow"
-            // width={100}
-            // height={50}
             fill
             className="object-contain"
           />

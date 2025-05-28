@@ -34,7 +34,7 @@ const JoinUs = () => {
         </div>
       </div>
 
-      {/* <ClientsForm /> */}
+      <ClientsForm />
     </section>
   )
 }
