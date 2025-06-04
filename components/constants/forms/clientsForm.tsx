@@ -6,81 +6,91 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import CustomFormField from "@/components/ui/CustomFormField"
+import SubmitButton from "@/components/SubmitButton"
+import React from "react"
+import { UserFormValidation } from "@/lib/validation"
+import { useRouter } from "next/navigation"
+import { createUser } from "@/lib/actions/client.actions"
 
-const formSchema = z.object({
-  name: z.string().max(30),
-  emailAddress: z.string().email(),
-  //   password: z.string().min(3),
-  //   passwordConfirm: z.string()
-  // }).refine((data) => {
-  //   return data.password === data.passwordConfirm
-  // }, {
-  //   message: "Senha não corresponde",
-  //   path: ["passwordConfirm"]
-})
+export enum FormFieldType {
+  INPUT = 'input',
+  TEXTAREA = 'textarea',
+  PHONE_INPUT = 'phoneInput',
+  CHECKBOX = 'checkbox',
+  DATE_PICKER = 'datePicker',
+  SELECT = 'select',
+  SKELETON = 'skeleton',
+}
 
 const ClientsForm = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const router = useRouter()
+  const [isLoading, setIsLoading] = React.useState(false)
+
+  const form = useForm<z.infer<typeof UserFormValidation>>({
+    resolver: zodResolver(UserFormValidation),
     defaultValues: {
       name: "",
-      emailAddress: "",
-      // password: "",
-      // passwordConfirm: ""
+      email: "",
+      phone: "",
     }
   })
 
-  const handleSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log({ values })
+  async function onSubmit({ name, email, phone }: z.infer<typeof UserFormValidation>) {
+    setIsLoading(true)
+    console.log("Submitting form with data:", { name, email, phone })
+
+    try {
+      const userData = { name, email, phone }
+
+      const user = await createUser(userData);
+
+      if (user) router.push(`/clients/${user.$id}/register`)
+      console.log(user)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24 text-white">
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(handleSubmit)}
+          onSubmit={form.handleSubmit(onSubmit)}
           className="max-w-md w-full flex flex-col gap-4">
-          <FormField
+
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
             control={form.control}
             name="name"
-            render={(({ field }) => {
-              return (
-                <FormItem>
-                  <FormLabel className="text-white">Nome:</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Ana Silva"
-                      type="text"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )
-            })}
+            label="Nome Completo"
+            placeholder="Thiago Lindo"
+            iconSrc="/assets/icons/user.svg"
+            iconAlt="User Icon"
           />
 
-          <FormField
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
             control={form.control}
-            name="emailAddress"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-white">Email:</FormLabel>
-                <FormControl>
-                  <Input placeholder="exemplo@gmail.com"
-                    type="email"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )
-            }
+            name="email"
+            label="Email"
+            placeholder="exemploemail@gmail.com"
+            iconSrc="/assets/icons/email.svg"
+            iconAlt="email"
           />
 
-          <Button type="submit" className="w-full hover:bg-neutral-800 ease-in cursor-pointer active:bg-neutral-600 active:ease-out">
-            Submit
-          </Button>
+          <CustomFormField
+            fieldType={FormFieldType.PHONE_INPUT}
+            control={form.control}
+            name="phone"
+            label="Telefone"
+            placeholder="(12) 1 2345-6789"
+            iconSrc="/assets/icons/phone.svg"
+            iconAlt="email"
+          />
+
+          <SubmitButton isLoading={isLoading} className="w-full hover:bg-neutral-800 ease-in cursor-pointer active:bg-neutral-600 active:ease-out"> Subscribe </SubmitButton>
+
         </form>
       </Form>
 

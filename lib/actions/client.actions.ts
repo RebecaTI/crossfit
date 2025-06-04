@@ -1,29 +1,25 @@
- 
+'use server'
 
-declare type SearchParamProps = {
-  params: { [key: string]: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+import { ID, Query } from 'node-appwrite'
+import { users } from '../appwrite.config'
 
-declare type Gender = "male" | "female" | "other";
+export const createUser = async (user: CreateUserParams) => {
+  try {
+    const newUser = await users.create(
+      ID.unique(),
+      user.email,
+      user.phone,
+      undefined,
+      user.name
+    )
+  } catch (error: any) {
+    if (error && error?.code === 409) {
+      const existingUser = await users.list([
+        Query.equal('email', [user.email])
+      ])
 
-declare interface CreateUserParams {
-  name: string;
-  email: string;
-  phone: string;
-}
-declare interface User extends CreateUserParams {
-  $id: string;
-}
-
-declare interface RegisterUserParams extends CreateUserParams {
-  userId: string;
-  birthDate: Date;
-  gender: Gender;
-  address: string;
-  emergencyContactName: string;
-  emergencyContactNumber: string;
-  currentMedication: string | undefined;
-  pastMedicalHistory: string | undefined;
-  privacyConsent: boolean;
+      return existingUser.users[0]
+    }
+    console.error('An error occurred while creating a new user:', error)
+  }
 }
