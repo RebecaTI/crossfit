@@ -11,7 +11,7 @@ export default function Home() {
       <PowerQuote />
       <HealthGoal />
       <JoinUs />
-      {/*<FindUs /> */}
+      <FindUs />
     </div>
   );
 }
