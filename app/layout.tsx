@@ -39,7 +39,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${heebo.variable} ${yantramanav.variable} container min-w-full`}
       >
-        {/* <Header /> */}
+        <Header />
         {children}
       </body>
     </html>
