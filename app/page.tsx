@@ -1,8 +1,9 @@
-import FindUs from "@/components/FindUs";
+// import FindUs from "@/components/FindUs";
 import JoinUs from "@/components/JoinUs";
 import PowerQuote from "@/components/PowerQuote";
 import { HealthGoal } from "@/components/HealthGoal";
 import HeroSection from "@/components/hero";
+import FitFamilySection from "@/components/fitFamily";
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       <PowerQuote />
       <HealthGoal />
       <JoinUs />
-      <FindUs />
+      {/* <FindUs /> */}
+      <FitFamilySection />
     </div>
   );
 }
