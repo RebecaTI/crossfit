@@ -51,11 +51,11 @@ const ClientsForm = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-between p-24 text-white">
+    <div className="flex flex-col items-center justify-between p-8 pt-12 sm:pt-23 lg:pt-30 text-white">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="max-w-md w-full flex flex-col gap-4">
+          className="max-w-md w-full flex flex-col gap-4 z-10">
 
           <CustomFormField
             fieldType={FormFieldType.INPUT}
@@ -87,7 +87,7 @@ const ClientsForm = () => {
             iconAlt="email"
           />
 
-          <SubmitButton isLoading={isLoading} className="w-full hover:bg-neutral-800 ease-in cursor-pointer active:bg-neutral-600 active:ease-out"> Subscribe </SubmitButton>
+          <SubmitButton isLoading={isLoading} className="w-full hover:bg-neutral-500 hover:text-white ease-in cursor-pointer active:bg-neutral-600 active:ease-out"> Subscribe </SubmitButton>
 
         </form>
       </Form>

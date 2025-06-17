@@ -1,8 +1,13 @@
+"use client"
+
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import FormFitFamily from './FormFitFamily'
+import TabelaImc from './TabelaImc'
 
 const ImcSection = () => {
+  const [imc, setImc] = useState<number>(0)
+
   return (
     <div className="p-25 grid sm:grid-rows-2 lg:grid-cols-2 container mx-auto justify-center text-gray-100">
       <div>
@@ -19,13 +24,12 @@ const ImcSection = () => {
           <p className=" text-gray-300 pt-2 pb-5 tracking-wider font-light text-center w-[350px]">Duo graece ponderum ne, ei mel aliquando. Pro te tamquam nonumes, nam no nemore epicurei</p>
         </div>
 
-        {/* <FormFitFamily /> */}
+        <FormFitFamily setImc={setImc} imc={imc} />
       </div>
 
       <div>
         <div className="h-[600px] w-[600px] bg-black rounded-[100%]">
-
-          <h1 className="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error commodi cum animi voluptatem ut atque at ipsam! Dolorum harum ducimus quisquam perspiciatis. Suscipit nemo nisi officia, sit commodi iste laudantium!</h1>
+          <TabelaImc imc={imc} />
         </div>
       </div>
     </div>
