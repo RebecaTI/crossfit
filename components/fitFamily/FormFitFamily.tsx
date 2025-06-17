@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import CampForm from './CampForm';
-import TabelaImc from './TabelaImc';
 
 const FormFitFamily = () => {
   const [peso, setPeso] = useState<number>(0);
