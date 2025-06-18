@@ -1,9 +1,8 @@
 interface CampFormProps {
   label: string;
   state: string | number;
-  funcState: (value: string | number) => void;
+  funcState: (value: any) => void;
   formatter?: (value: string) => string | number;
-  onEnter?: () => void;
 }
 
 export default function CompForm(props: CampFormProps) {
@@ -15,20 +14,15 @@ export default function CompForm(props: CampFormProps) {
       props.funcState(value)
     }
   }
-
-  const handleEnter = ((e) => {
-    if (e.key === 'Enter' && props.onEnter) {
-      props.onEnter();
-    }
-  })
+  console.log(props)
   return (
+
     <div className="flex mx-2 border rounded-lg items-center">
       <label className="w-[60px] pl-3">{props.label}</label>
       <input
         className=" p-1 w-full"
         value={props.state}
         onChange={handleChange}
-        onKeyDown={handleEnter}
       />
     </div>
   )

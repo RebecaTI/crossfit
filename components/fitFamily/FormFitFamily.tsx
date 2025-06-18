@@ -19,7 +19,7 @@ const FormFitFamily = () => {
       <div className="flex">
         <CampForm
           label="Peso"
-          state={peso}
+          state={peso || ""}
           funcState={setPeso}
         />
         <CampForm
