@@ -28,7 +28,6 @@ const PowerQuote = () => {
             className="Homem sentado fazendo exercicio"
           />
         </div>
-        {/* lg:hidden */}
         <div className=" lg:hidden flex flex-col mx-auto items-center justify-center text-gray-100 ">
           <div className="relative text-center">
             <div className="relative w-[40px] h-[40px] left-13 top-13 sm:top-15">
@@ -56,7 +55,7 @@ const PowerQuote = () => {
         </div>
       </div>
 
-      <div className="bg-[#131619] py-10">
+      {/* <div className="bg-[#131619] py-10">
         <div className="hidden lg:flex container mx-auto items-center h-[500] justify-center gap-20 text-gray-100">
 
           <Image
@@ -104,7 +103,7 @@ const PowerQuote = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }

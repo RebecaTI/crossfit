@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <div className="relative">
       <div className="absolute top-0 w-full ">
-        <section className="py-40 sm:flex sm:flex-col sm:justify-center sm:items-center bg-[#131619] h-screen text-gray-200 sm:w-screen">
+        <section className="py-40 sm:flex sm:flex-col sm:justify-center sm:items-center bg-[#131619]  text-gray-200 h-[400px] sm:h-[700px]">
           <div className="flex justify-center items-center">
             <div className="relative w-[100px] h-[50px] sm:w-[80px] lg:w-[120px] text-center">
               <Image
