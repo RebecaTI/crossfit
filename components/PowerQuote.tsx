@@ -17,7 +17,7 @@ const PowerQuote = () => {
             <h3 className="font-yantramanav absolute top-[-20] left-[-30]  stroke-text font-extrabold text-6xl z-1">STRONG</h3>
             <h2 className="text-4xl font-bold z-10 uppercase relative w-[400]">Be you, just stronger!</h2>
             <h2 className="text-4xl font-bold z-10 uppercase relative w-[400]">Power is in you!</h2>
-            <p className="w-[400] text-gray-300 pt-4 tracking-wider font-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis delectus, exercitationem.</p>
+            <p className=" text-gray-300 pt-4 tracking-wider font-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis delectus, exercitationem.</p>
           </div>
 
           <Image
@@ -41,7 +41,7 @@ const PowerQuote = () => {
             <h3 className="font-yantramanav absolute top-5 left-18 sm:top-0 sm:left-10  stroke-text font-extrabold text-4xl sm:text-8xl z-1">STRONG</h3>
             <h2 className="text-[1.1rem] sm:text-4xl font-bold z-10 uppercase relative">Be you, just stronger! </h2>
             <h2 className="text-2xl sm:text-4xl font-bold z-10 uppercase relative">Power is in you</h2>
-            <p className="w-[290px] sm:w-[640px] text-gray-300 pt-4 tracking-wider font-light px-15 text-left pb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis delectus, exercitationem.</p>
+            <p className="w-[290px] sm:w-[640px] text-gray-300 pt-4 tracking-wider font-light text-left pb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis delectus, exercitationem.</p>
           </div>
 
           <div className="relative w-[290px] h-[400px] ">
@@ -55,7 +55,7 @@ const PowerQuote = () => {
         </div>
       </div>
 
-      {/* <div className="bg-[#131619] py-10">
+      <div className="bg-[#131619] py-10">
         <div className="hidden lg:flex container mx-auto items-center h-[500] justify-center gap-20 text-gray-100">
 
           <Image
@@ -91,7 +91,7 @@ const PowerQuote = () => {
             </div>
             <h3 className="font-yantramanav absolute top-5 left-18 sm:top-0 sm:left-10  stroke-text font-extrabold text-4xl sm:text-8xl z-1">START</h3>
             <h2 className="text-[1.1rem] sm:text-4xl font-bold z-10 uppercase relative">Today is the best day t start! </h2>
-            <p className="w-[290px] sm:w-[640px] text-gray-300 pt-4 tracking-wider font-light px-15 text-left pb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis delectus, exercitationem.</p>
+            <p className="w-[290px] sm:w-[640px] text-gray-300 pt-4 tracking-wider font-light text-left pb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis delectus, exercitationem.</p>
           </div>
 
           <div className="relative w-[290px] h-[400px] ">
@@ -103,7 +103,7 @@ const PowerQuote = () => {
             />
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   )
 }
