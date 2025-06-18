@@ -14,7 +14,7 @@ export function HeroParticles() {
   }, [resolvedTheme]);
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg border ">
+    <div className="relative flex h-[400px] sm:h-[700px] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
       <Particles
         className="absolute inset-0 z-0"
         quantity={100}

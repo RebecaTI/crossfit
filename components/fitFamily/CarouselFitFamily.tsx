@@ -19,7 +19,7 @@ export function CarouselFitFamily() {
   )
 
   return (
-    <div className="w-[290px] sm:w-[550px] md:w-[800px] lg:w-[1100px] m-auto d-flex justify-center items-center ">
+    <div className="w-[190px] sm:w-[500px] md:w-[800px] lg:w-[1000px] m-auto d-flex justify-center items-center ">
       <Carousel
         plugins={[plugin.current]}
         opts={{

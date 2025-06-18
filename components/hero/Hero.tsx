@@ -5,7 +5,7 @@ import React from 'react'
 const Hero = () => {
   return (
     // <WordRotate words={["Word", "Rotate"]} />
-    <section className="py-40 sm:flex sm:flex-col sm:justify-center sm:items-center bg-[#131619] text-gray-200 sm:w-screen">
+    <section className=" sm:flex sm:flex-col sm:justify-center sm:items-center bg-[#131619] text-gray-200 sm:w-screen">
       <div className="flex justify-center items-center">
         <div className="relative w-[100px] h-[50px] sm:w-[80px] lg:w-[120px] text-center">
           <Image
