@@ -23,9 +23,5 @@ export const healthGoalImages = [
     image: "/images/goal6.svg",
     alt: "Health Goal 6"
   },
-  // {
-  //   image: "/images/arrow.png",
-  //   alt: "Arrow"
-  // },
 ]
 

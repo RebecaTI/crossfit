@@ -1,17 +1,19 @@
-import FindUs from "@/components/FindUs";
+// import FindUs from "@/components/FindUs";
 import JoinUs from "@/components/JoinUs";
-import Hero from "@/components/Hero";
 import PowerQuote from "@/components/PowerQuote";
 import { HealthGoal } from "@/components/HealthGoal";
+import HeroSection from "@/components/hero";
+import FitFamilySection from "@/components/fitFamily";
 
 export default function Home() {
   return (
     <div className="  background-page">
-      <Hero />
+      <HeroSection />
       <PowerQuote />
       <HealthGoal />
       <JoinUs />
-      {/*<FindUs /> */}
+      {/* <FindUs /> */}
+      <FitFamilySection />
     </div>
   );
 }

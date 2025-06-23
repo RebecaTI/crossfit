@@ -1,16 +1,16 @@
 import Image from 'next/image'
 import React from 'react'
+// import { WordRotate } from "@/components/magicui/word-rotate";
 
 const Hero = () => {
   return (
-    <section className="py-40 sm:flex sm:flex-col sm:justify-center sm:items-center bg-[#131619] text-gray-200 sm:w-screen">
+    // <WordRotate words={["Word", "Rotate"]} />
+    <section className=" sm:flex sm:flex-col sm:justify-center sm:items-center bg-[#131619] text-gray-200 sm:w-screen">
       <div className="flex justify-center items-center">
         <div className="relative w-[100px] h-[50px] sm:w-[80px] lg:w-[120px] text-center">
           <Image
             src="/arrow.svg"
             alt="events arrow"
-            // width={100}
-            // height={50}
             fill
             className="object-contain"
           />

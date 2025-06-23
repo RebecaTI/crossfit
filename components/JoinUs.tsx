@@ -22,8 +22,8 @@ const JoinUs = () => {
       <div className=" flex relative justify-center items-center">
         <div className="absolute top-[-15] sm:top-[-50]">
 
-          <h1 className="font-extrabold text-3xl sm:text-8xl lg:text-9xl tracking-wide text-white mr-8 ">Join us</h1>
-          <div className="relative h-[40px] w-[40px] left-30 bottom-10 sm:h-[70px] sm:w-[70px] sm:left-90 lg:left-120 lg:bottom-20 sm:bottom-18">
+          <h1 className="font-extrabold text-4xl sm:text-8xl lg:text-9xl tracking-wide text-white mr-8 ">Join us</h1>
+          <div className="relative h-[30px] w-[30px] left-34 bottom-8 sm:h-[70px] sm:w-[70px] sm:left-90 lg:left-120 lg:bottom-20 sm:bottom-18">
             <Image
               src="arrow.svg"
               alt='Seta'

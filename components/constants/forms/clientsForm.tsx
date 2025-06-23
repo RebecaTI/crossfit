@@ -1,75 +1,101 @@
 "use client"
 
-import { zodResolver } from "@hookform/resolvers/zod"
+import * as z from "zod"
 import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { Button } from "@/components/ui/button"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { Form } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import Image from "next/image"
-import CustomFormField from "@/components/CustomFormField"
+import CustomFormField from "@/components/ui/CustomFormField"
+import SubmitButton from "@/components/SubmitButton"
+import React from "react"
+import { UserFormValidation } from "@/lib/validation"
+import { useRouter } from "next/navigation"
+import { createUser } from "@/lib/actions/client.actions"
 
 export enum FormFieldType {
   INPUT = 'input',
+  TEXTAREA = 'textarea',
+  PHONE_INPUT = 'phoneInput',
+  CHECKBOX = 'checkbox',
+  DATE_PICKER = 'datePicker',
+  SELECT = 'select',
+  SKELETON = 'skeleton',
 }
 
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-})
+const ClientsForm = () => {
+  const router = useRouter()
+  const [isLoading, setIsLoading] = React.useState(false)
 
-const clientsForm = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof UserFormValidation>>({
+    resolver: zodResolver(UserFormValidation),
     defaultValues: {
-      username: "",
-    },
+      name: "",
+      email: "",
+      phone: "",
+    }
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+  async function onSubmit({ name, email, phone }: z.infer<typeof UserFormValidation>) {
+    setIsLoading(true)
+    console.log("Submitting form with data:", { name, email, phone })
+
+    try {
+      const userData = { name, email, phone }
+
+      const user = await createUser(userData);
+
+      if (user) router.push(`/clients/${user.$id}/register`)
+      console.log(user)
+    } catch (error) {
+      console.log(error)
+    }
   }
+
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <section className="bg-[#131619]">
-          <div className="flex flex-col justify-center items-center relative  w-full">
-            <div className="mt-30">
-              <div className="relative flex flex-col justify-center items-center  text-gray-300">
-                <h3 className="font-yantramanav absolute top-[-110] stroke-text font-extrabold text-[140px] z-1">GO!</h3>
-                <div className="flex">
-                  <Image
-                    src="/plus.png"
-                    alt="plus sign"
-                    width={20}
-                    height={20}
-                    className=''
-                  />
-                  <h2 className="text-4xl font-bold z-10 uppercase ">start here </h2>
-                </div>
-                <p className="w-[400] pt-4 tracking-wider font-light text-center">fill the form below to start your journey</p>
-              </div>
-            </div>
-          </div>
-        </section>
+    <div className="flex flex-col items-center justify-between p-8 pt-12 sm:pt-23 lg:pt-30 text-white">
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="max-w-md w-full flex flex-col gap-4 z-10">
 
-        {/* <CustomFormField
-          fieldType={FormFieldType.INPUT}
-          control={form.control}
-          name="name"
-          label="Nome Completo"
-          placeholder="Maria da Silva"
-          iconSrc="/assets/icons/user.svg"
-          iconAlt="user"
-        /> */}
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="name"
+            label="Nome Completo"
+            placeholder="Thiago Lindo"
+            iconSrc="/assets/icons/user.svg"
+            iconAlt="User Icon"
+          />
 
-        {/* continuar essa parte acima */}
+          <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="email"
+            label="Email"
+            placeholder="exemploemail@gmail.com"
+            iconSrc="/assets/icons/email.svg"
+            iconAlt="email"
+          />
 
-        {/* <Button type="submit">Submit</Button> */}
-      </form>
-    </Form>
+          <CustomFormField
+            fieldType={FormFieldType.PHONE_INPUT}
+            control={form.control}
+            name="phone"
+            label="Telefone"
+            placeholder="(12) 1 2345-6789"
+            iconSrc="/assets/icons/phone.svg"
+            iconAlt="email"
+          />
+
+          <SubmitButton isLoading={isLoading} className="w-full hover:bg-neutral-500 hover:text-white ease-in cursor-pointer active:bg-neutral-600 active:ease-out"> Subscribe </SubmitButton>
+
+        </form>
+      </Form>
+
+    </div>
   )
 }
 
-export default clientsForm
+export default ClientsForm
+
+// 16:22 a parte da senha
