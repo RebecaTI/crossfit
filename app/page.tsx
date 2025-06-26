@@ -10,12 +10,12 @@ export default function Home() {
   return (
     <div className="  background-page">
       <HeroSection />
-      <PowerQuote />
-      <HealthGoal />
-      <JoinUs />
+      {/* <PowerQuote /> */}
+      {/* <HealthGoal /> */}
+      {/* <JoinUs /> */}
       {/* <FindUs /> */}
       {/* <FitFamilySection /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
