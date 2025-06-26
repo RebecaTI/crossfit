@@ -4,6 +4,7 @@ import PowerQuote from "@/components/PowerQuote";
 import { HealthGoal } from "@/components/HealthGoal";
 import HeroSection from "@/components/hero";
 import FitFamilySection from "@/components/fitFamily";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <JoinUs />
       {/* <FindUs /> */}
       <FitFamilySection />
+      <Footer />
     </div>
   );
 }

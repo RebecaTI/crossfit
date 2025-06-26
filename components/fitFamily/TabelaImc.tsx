@@ -1,6 +1,6 @@
 export default function TabelaImc() {
   return (
-    <div className="mx-4 my-20 h-[350px] w-[400px] sm:h-[450px] sm:w-[500px] bg-black rounded-[90%] flex flex-col justify-center ">
+    <div className="mx-4 my-20 sm:my-10 h-[350px] w-[400px] sm:h-[450px] sm:w-[500px] bg-black rounded-[70%] flex flex-col justify-center ">
       <div className="flex">
         <div className="w-1/2 border p-4 text-2xl bolder">Classificação</div>
         <div className="w-1/2 border p-4 text-2xl  bolder">IMC</div>

@@ -9,7 +9,7 @@ const ImcSection = () => {
 
   return (
     <div className="pt-10 sm:grid sm:grid-rows-1 lg:grid-cols-2 mx-auto justify-center lg:px-10 text-gray-100">
-      <div>
+      <div className="container-pai">
         <div className="relative">
           <Image
             src="/plus.png"
