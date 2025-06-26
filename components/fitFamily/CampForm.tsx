@@ -1,8 +1,8 @@
 interface CampFormProps {
   label: string;
   state: string | number;
-  funcState: (value: any) => void;
-  formatter?: (value: string) => string | number;
+  funcState: (value: number) => void;
+  formatter?: (value: string) => number;
 }
 
 export default function CompForm(props: CampFormProps) {
