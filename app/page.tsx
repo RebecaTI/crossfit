@@ -3,7 +3,7 @@ import JoinUs from "@/components/JoinUs";
 import PowerQuote from "@/components/PowerQuote";
 import { HealthGoal } from "@/components/HealthGoal";
 import HeroSection from "@/components/hero";
-import FitFamilySection from "@/components/fitFamily";
+// import FitFamilySection from "@/components/fitFamily";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
       <HealthGoal />
       <JoinUs />
       {/* <FindUs /> */}
-      <FitFamilySection />
+      {/* <FitFamilySection /> */}
       <Footer />
     </div>
   );
