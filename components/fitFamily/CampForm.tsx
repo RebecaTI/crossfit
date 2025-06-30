@@ -11,7 +11,7 @@ export default function CompForm(props: CampFormProps) {
     if (props.formatter) {
       props.funcState(props.formatter(value))
     } else {
-      props.funcState(value)
+      props.funcState(Number(value))
     }
   }
   console.log(props)
