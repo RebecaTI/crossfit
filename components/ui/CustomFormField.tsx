@@ -30,9 +30,9 @@ interface CustomProps {
   renderSkeleton?: (field: any) => React.ReactNode,
 }
 
-const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
+const RenderField = ({ field, props }: { field: FormFieldType; props: CustomProps }) => {
   const { fieldType, iconSrc, iconAlt, placeholder } = props;
-
+  console.log(props.control)
   switch (fieldType) {
     case FormFieldType.INPUT:
       return (
