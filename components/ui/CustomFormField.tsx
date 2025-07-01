@@ -53,7 +53,11 @@ const RenderField = ({ field, props }: RenderFieldProps) => {
           <FormControl>
             <Input
               placeholder={placeholder}
-              {...field}
+              value={field.value}
+              onChange={field.onChange}
+              onBlur={field.onBlur}
+              name={field.name}
+              ref={field.ref}
               className="shad-input border-0"
             />
           </FormControl>
