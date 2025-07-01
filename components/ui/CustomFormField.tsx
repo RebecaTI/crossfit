@@ -8,7 +8,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Control } from "react-hook-form"
+import { Control, ControllerRenderProps, FieldValues } from "react-hook-form"
 import { FormFieldType } from "../constants/forms/clientsForm"
 import Image from "next/image"
 import 'react-phone-number-input/style.css'
@@ -30,9 +30,13 @@ interface CustomProps {
   renderSkeleton?: (field: any) => React.ReactNode,
 }
 
-const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
-  const { fieldType, iconSrc, iconAlt, placeholder } = props;
+interface RenderFieldProps {
+  field: ControllerRenderProps<FieldValues, string>;
+  props: CustomProps;
+}
 
+const RenderField = ({ field, props }: RenderFieldProps) => {
+  const { fieldType, iconSrc, iconAlt, placeholder } = props;
   switch (fieldType) {
     case FormFieldType.INPUT:
       return (
@@ -66,14 +70,12 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             value={field.value}
             onChange={field.onChange}
             className='mt-2 h-11 rounded-md px-3 text-sm border '
-
-
           />
         </FormControl>
       )
 
     default:
-      break;
+      return null;
   }
 }
 

@@ -1,4 +1,4 @@
-// import FindUs from "@/components/FindUs";
+import FindUs from "@/components/FindUs";
 import JoinUs from "@/components/JoinUs";
 import PowerQuote from "@/components/PowerQuote";
 import { HealthGoal } from "@/components/HealthGoal";
@@ -8,12 +8,12 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="  background-page">
+    <div className="background-page">
       <HeroSection />
       <PowerQuote />
       <HealthGoal />
       <JoinUs />
-      {/* <FindUs /> */}
+      <FindUs />
       <FitFamilySection />
       <Footer />
     </div>
