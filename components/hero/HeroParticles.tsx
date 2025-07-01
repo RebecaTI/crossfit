@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Particles } from "@/components/magicui/particles";
 
-export function HeroParticles() {
+export default function HeroParticles() {
   const { resolvedTheme } = useTheme();
   const [color, setColor] = useState("#ffffff");
 
@@ -18,7 +18,7 @@ export function HeroParticles() {
       <Particles
         className="absolute inset-0 z-0"
         quantity={100}
-        ease={80}
+        ease={40}
         color={color}
         refresh
       />

@@ -188,8 +188,22 @@ export const Particles: React.FC<ParticlesProps> = ({
     drawParticles();
   }, [resizeCanvas, drawParticles]);
 
+  const onMouseMove = useCallback(() => {
+    if (canvasRef.current) {
+      const rect = canvasRef.current.getBoundingClientRect();
+      const { w, h } = canvasSize.current;
+      const x = mousePosition.x - rect.left - w / 2;
+      const y = mousePosition.y - rect.top - h / 2;
+      const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
+      if (inside) {
+        mouse.current.x = x;
+        mouse.current.y = y;
+      }
+    }
+  }, [mousePosition, canvasRef, canvasSize]);
+
+  // Mova animate para cima para evitar uso antes da declaração
   const animate = useCallback(() => {
-    // Definir remapValue dentro do animate para evitar o warning do ESLint
     const remapValue = (
       value: number,
       start1: number,
@@ -258,21 +272,8 @@ export const Particles: React.FC<ParticlesProps> = ({
     ease,
     circleParams,
     canvasSize,
+    mouse,
   ]);
-
-  const onMouseMove = useCallback(() => {
-    if (canvasRef.current) {
-      const rect = canvasRef.current.getBoundingClientRect();
-      const { w, h } = canvasSize.current;
-      const x = mousePosition.x - rect.left - w / 2;
-      const y = mousePosition.y - rect.top - h / 2;
-      const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
-      if (inside) {
-        mouse.current.x = x;
-        mouse.current.y = y;
-      }
-    }
-  }, [mousePosition, canvasRef, canvasSize]);
 
   useEffect(() => {
     if (canvasRef.current) {

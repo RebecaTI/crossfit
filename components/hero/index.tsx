@@ -1,6 +1,7 @@
 import React from 'react'
-import { HeroParticles } from './HeroParticles'
+
 import Image from 'next/image'
+import HeroParticles from './HeroParticles'
 
 export default function HeroSection() {
   return (
