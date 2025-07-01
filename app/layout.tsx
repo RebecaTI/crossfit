@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${heebo.variable} ${yantramanav.variable} container min-w-full`}
       >

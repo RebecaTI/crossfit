@@ -1,4 +1,3 @@
-import FindUs from "@/components/FindUs";
 import JoinUs from "@/components/JoinUs";
 import PowerQuote from "@/components/PowerQuote";
 import { HealthGoal } from "@/components/HealthGoal";
@@ -13,7 +12,6 @@ export default function Home() {
       <PowerQuote />
       <HealthGoal />
       <JoinUs />
-      <FindUs />
       <FitFamilySection />
       <Footer />
     </div>
